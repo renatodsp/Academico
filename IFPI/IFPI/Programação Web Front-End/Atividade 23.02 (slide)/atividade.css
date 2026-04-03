@@ -1,0 +1,34 @@
+#titulo {
+    background-color: #ccbb99;
+    color: black;
+    text-align: right;
+}
+
+body {
+    background-image: url(imagens/fundo_final.jpg);
+    padding-bottom: 20px;
+}
+
+p {
+    color: #ccbb99;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.linha {
+    border-style: dotted;
+    color: #ccbb99;
+
+}
+
+#borda {
+    border: 1px dotted #ccbb99;
+    margin-left: 15%;
+    margin-right: 15%;
+}
+
+#rodape {
+    background-color: #ccbb99;
+    color: black;
+    text-align: left;
+}

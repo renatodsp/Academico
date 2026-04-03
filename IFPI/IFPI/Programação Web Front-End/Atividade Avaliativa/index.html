@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog do Timão - Corinthians</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body id="topo">
+    <div id="conteiner">
+        <header>
+            <h1>Blog do <span>Timão</span></h1>
+            <p>"Aqui tem um bando de louco, louco por ti Corinthians"</p>
+
+            <!-- botão do menu hamburguer, só aparece no celular -->
+            <button class="hamburger" id="hamburger" aria-label="Abrir menu">
+                <span class="hamburger-linha"></span>
+                <span class="hamburger-linha"></span>
+                <span class="hamburger-linha"></span>
+            </button>
+
+            <!-- coloquei o nav dentro dessa div pra ele ficar fixo no topo quando rola a página -->
+            <div class="nav-wrapper">
+                <nav id="nav">
+                    <ul>
+                        <li><a href="#topo" class="link-ativo">Início</a></li>
+                        <li><a href="#ultima">Primeira postagem</a></li>
+                        <li><a href="#primeira">Última postagem</a></li>
+                        <li><a href="#rodape">Contato</a></li>
+                        <li><a href="#" id="btnSobre">Sobre</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <!-- aqui começa o layout principal, usei CSS Grid pra dividir entre os posts e o aside -->
+        <div class="grid-layout">
+            <main>
+                <!-- post sobre o jogo contra o flamengo -->
+                <article id="ultima" class="card">
+                    <picture>
+                        <source media="(max-width: 600px)" srcset="img/cxf.webp" sizes="100vw">
+                        <img src="img/cxf.webp" alt="Neo Química Arena lotada" class="card-imagem">
+                    </picture>
+                    <h2>Corinthians empata com o Flamengo na Arena</h2>
+                    <p>Em clássico disputado na Neo Química Arena, o Corinthians empatou em 1 a 1 com o Flamengo pelo
+                        Campeonato Brasileiro. O Timão jogou com um jogador a mais durante boa parte do segundo tempo
+                        após expulsão na equipe carioca, criou várias chances, mas não conseguiu converter a pressão no
+                        gol da vitória.</p>
+                    <p class="autor">
+                        Redação
+                        <span class="data-hora">22/03/2026 - 21:30</span>
+                    </p>
+                </article>
+
+                <!-- post sobre o jogo contra a chapecoense -->
+                <article class="card">
+                    <picture>
+                        <source media="(max-width: 600px)" srcset="img/cxc.webp" sizes="100vw">
+                        <img src="img/cxc.webp" alt="Jogador do Corinthians em ação" class="card-imagem">
+                    </picture>
+                    <h2>Empate sem gols fora de casa contra a Chapecoense</h2>
+                    <p>O Corinthians viajou até Santa Catarina e ficou no 0 a 0 com a Chapecoense na Arena Condá. Em um
+                        jogo truncado e de poucas oportunidades claras para ambos os lados, a equipe alvinegra somou
+                        apenas um ponto fora de casa pelo Brasileirão.</p>
+                    <p class="autor">
+                        Redação
+                        <span class="data-hora">19/03/2026 - 19:00</span>
+                    </p>
+                </article>
+
+                <!-- post sobre os reforços que chegaram -->
+                <article class="card">
+                    <picture>
+                        <source media="(max-width: 600px)" srcset="img/fans.png" sizes="100vw">
+                        <img src="img/fans.png" alt="Torcida do Corinthians fazendo festa" class="card-imagem">
+                    </picture>
+                    <h2>Pacotão de Reforços: Gabriel Paulista, Matheus Pereira e Milans</h2>
+                    <p>Com o fim do transfer ban, o Corinthians se movimentou pesado no mercado. Entre os principais
+                        reforços confirmados estão o experiente zagueiro Gabriel Paulista, vindo da Europa, o lateral
+                        uruguaio Pedro Milans, e o meia Matheus Pereira. A Fiel vive a expectativa da estreia dos novos
+                        contratados.</p>
+                    <p class="autor">
+                        Mercado da Bola
+                        <span class="data-hora">15/03/2026 - 14:00</span>
+                    </p>
+                </article>
+
+                <!-- post sobre o interesse no arthur cabral -->
+                <article id="primeira" class="card">
+                    <picture>
+                        <source media="(max-width: 600px)" srcset="img/cabral.jpg" sizes="100vw">
+                        <img src="img/cabral.jpg" alt="Arthur Cabral" class="card-imagem">
+                    </picture>
+                    <h2>Corinthians tenta a contratação de Arthur Cabral</h2>
+                    <p>O executivo de futebol Marcelo Paz confirmou o interesse no atacante Arthur Cabral, atualmente no
+                        Botafogo. A ideia da diretoria corintiana é um empréstimo até abril de 2027 com opção de compra.
+                        Apesar do interesse, os altos valores envolvidos ainda são o principal obstáculo para a
+                        concretização do negócio.</p>
+                    <p class="autor">
+                        Mercado da Bola
+                        <span class="data-hora">10/03/2026 - 10:30</span>
+                    </p>
+                </article>
+            </main>
+
+            <!-- barra lateral com informações extras -->
+            <aside>
+                <div class="aside-secao">
+                    <h3>Links Úteis</h3>
+                    <ul class="aside-links">
+                        <li><a href="https://www.corinthians.com.br" target="_blank">Site Oficial do Corinthians</a>
+                        </li>
+                        <li><a href="#">Futebol Profissional</a></li>
+                        <li><a href="https://www.fieltorcedor.com.br" target="_blank">Sócio Fiel</a></li>
+                        <li><a href="https://www.fieltorcedor.com.br/auth/login/?next=/jogos"
+                                target="_blank">Ingressos</a></li>
+                        <li><a href="https://www.shoptimao.com.br/" target="_blank">Loja do Timão</a></li>
+                    </ul>
+                </div>
+
+                <!-- lista dos títulos do corinthians -->
+                <div class="aside-secao">
+                    <h3>Títulos Conquistados</h3>
+                    <ul class="aside-titulos">
+                        <li><strong>Mundial:</strong> 2000, 2012</li>
+                        <li><strong>Libertadores:</strong> 2012</li>
+                        <li><strong>Brasileirão:</strong> 1990, 1998, 1999, 2005, 2011, 2015, 2017</li>
+                        <li><strong>Copa do Brasil:</strong> 1995, 2002, 2009</li>
+                        <li><strong>Paulistão:</strong> 30 títulos</li>
+                    </ul>
+                </div>
+
+                <!-- placar dos últimos jogos, usei badges coloridos pra indicar V/E/D -->
+                <div class="aside-secao">
+                    <h3>Últimos Resultados</h3>
+                    <div class="resultados">
+                        <div class="resultado-item">
+                            <span class="badge empate">E</span>
+                            <div>
+                                <strong>Corinthians 1 × 1 Flamengo</strong>
+                                <p>Brasileirão • 22/03</p>
+                            </div>
+                        </div>
+                        <div class="resultado-item">
+                            <span class="badge empate">E</span>
+                            <div>
+                                <strong>Chapecoense 0 × 0 Corinthians</strong>
+                                <p>Brasileirão • 19/03</p>
+                            </div>
+                        </div>
+                        <div class="resultado-item">
+                            <span class="badge empate">E</span>
+                            <div>
+                                <strong>Santos 1 × 1 Corinthians</strong>
+                                <p>Brasileirão • 15/03</p>
+                            </div>
+                        </div>
+                        <div class="resultado-item">
+                            <span class="badge derrota">D</span>
+                            <div>
+                                <strong>Corinthians 0 × 2 Coritiba</strong>
+                                <p>Brasileirão • 11/03</p>
+                            </div>
+                        </div>
+                        <div class="resultado-item">
+                            <span class="badge vitoria">V</span>
+                            <div>
+                                <strong>Corinthians 2 × 1 Palmeiras</strong>
+                                <p>Paulistão • 08/03</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+        </div>
+
+        <!-- rodapé do site com contato e redes sociais -->
+        <footer id="rodape">
+            <div class="footer-conteudo">
+                <div class="footer-secao">
+                    <h4>Blog do Timão</h4>
+                    <p>Blog dedicado ao Corinthians. Notícias, história e opinião.</p>
+                    <p>📍 Teresina, PI - Brasil</p>
+                    <p>✉️ <a href="mailto:contato@blogdotimao.com.br">contato@blogdotimao.com.br</a></p>
+                </div>
+                <div class="footer-secao">
+                    <h4>Redes Sociais</h4>
+                    <ul class="footer-redes">
+                        <li><a href="https://twitter.com/corinthians" target="_blank">Twitter / X</a></li>
+                        <li><a href="https://instagram.com/corinthians" target="_blank">Instagram</a></li>
+                        <li><a href="https://facebook.com/corinthians" target="_blank">Facebook</a></li>
+                        <li><a href="https://youtube.com/corinthians" target="_blank">YouTube</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>Copyright 2026 &copy; - Blog do Timão</p>
+                <a href="#topo" class="voltar-topo">↑ Voltar ao Topo</a>
+            </div>
+        </footer>
+    </div>
+
+    <!-- usei a tag <dialog> que é mais recente no HTML, cria um modal nativo sem precisar de biblioteca -->
+    <dialog id="dialogSobre" class="dialog-sobre">
+        <h2>Sobre o Blog do Timão</h2>
+        <p>Este blog foi criado como atividade avaliativa da disciplina de Programação Web Front-End do IFPI.</p>
+        <p>O objetivo é apresentar notícias e informações sobre o Sport Club Corinthians Paulista, utilizando HTML
+            semântico, CSS moderno e JavaScript.</p>
+        <p><strong>Tecnologias utilizadas:</strong></p>
+        <ul>
+            <li>HTML5 (semântico + tag dialog)</li>
+            <li>CSS3 (variáveis, grid, flexbox, media queries)</li>
+            <li>JavaScript (dark mode, menu hambúrguer)</li>
+        </ul>
+        <button id="fecharDialog">Fechar</button>
+    </dialog>
+
+    <!-- botão do dark mode - essa parte foi feita com ajuda de IA -->
+    <button class="dark-mode-btn" id="darkModeBtn">🌙</button>
+
+    <script>
+        // aqui faz o menu hamburguer abrir e fechar quando clica no botão
+        var hamburger = document.getElementById('hamburger');
+        var nav = document.getElementById('nav');
+
+        hamburger.addEventListener('click', function () {
+            nav.classList.toggle('nav-aberto');
+            hamburger.classList.toggle('hamburger-ativo');
+        });
+
+        // fecha o menu quando clica em algum link (senão ele ficava aberto)
+        var links = document.querySelectorAll('nav a');
+        for (var i = 0; i < links.length; i++) {
+            links[i].addEventListener('click', function () {
+                nav.classList.remove('nav-aberto');
+                hamburger.classList.remove('hamburger-ativo');
+            });
+        }
+
+        // lógica do dark mode, salva a preferência no localStorage pra lembrar quando voltar
+        var darkBtn = document.getElementById('darkModeBtn');
+
+        if (localStorage.getItem('darkMode') === 'true') {
+            document.body.classList.add('dark-mode');
+            darkBtn.textContent = '☀️';
+        }
+
+        darkBtn.addEventListener('click', function () {
+            document.body.classList.toggle('dark-mode');
+            var isDark = document.body.classList.contains('dark-mode');
+            darkBtn.textContent = isDark ? '☀️' : '🌙';
+            localStorage.setItem('darkMode', isDark);
+        });
+
+        // abre o dialog "Sobre" quando clica no link, o showModal() é o método nativo do <dialog>
+        var btnSobre = document.getElementById('btnSobre');
+        var dialogSobre = document.getElementById('dialogSobre');
+        var fecharDialog = document.getElementById('fecharDialog');
+
+        btnSobre.addEventListener('click', function (e) {
+            e.preventDefault();
+            dialogSobre.showModal();
+        });
+
+        fecharDialog.addEventListener('click', function () {
+            dialogSobre.close();
+        });
+    </script>
+</body>
+
+</html>

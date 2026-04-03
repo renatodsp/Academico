@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício de Formulários</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <h2>Formulário de Registro</h2>
+
+    <form action="/register" method="POST">
+        <div class="form-group">
+            <label for="fullname">Nome Completo:</label>
+            <input type="text" id="fullname" name="fullname" required>
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+
+        <div class="form-group">
+            <label for="password">Senha:</label>
+            <input type="password" id="password" name="password" required>
+        </div>
+
+        <div class="form-group">
+            <label for="nascimento">Data de nascimento:</label>
+            <input type="date" id="nascimento" name="nascimento">
+        </div>
+
+        <div class="form-group">
+            <label>Sexo:</label><br>
+            <input type="radio" id="masculino" name="sexo" value="masculino">
+            <label for="masculino">Masculino</label>
+            <input type="radio" id="feminino" name="sexo" value="feminino">
+            <label for="feminino">Feminino</label>
+            <input type="radio" id="outro" name="sexo" value="outro">
+            <label for="outro">Outro</label>
+        </div>
+
+        <div class="form-group">
+            <label>Interesses:</label><br>
+            <input type="checkbox" id="tecnologia" name="interesses" value="tecnologia">
+            <label for="tecnologia">Tecnologia</label>
+            <input type="checkbox" id="educacao" name="interesses" value="educacao">
+            <label for="educacao">Educação</label>
+            <input type="checkbox" id="musica" name="interesses" value="musica">
+            <label for="musica">Música</label>
+            <input type="checkbox" id="esportes" name="interesses" value="esportes">
+            <label for="esportes">Esportes</label>
+        </div>
+
+        <div class="form-group">
+            <label for="pais">País:</label>
+            <select id="pais" name="pais">
+                <option value="brasil">Brasil</option>
+                <option value="eua">Estados Unidos</option>
+                <option value="canada">Canadá</option>
+                <option value="japao">Japão</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="bio">Biografia:</label>
+            <textarea id="bio" name="bio" rows="4"></textarea>
+        </div>
+
+        <div class="form-group">
+            <input type="submit" value="Registrar">
+        </div>
+    </form>
+
+    <br><br><br><br>
+    <h3>Buscas Externas</h3>
+
+    <p>Buscar no YouTube:</p>
+    <form action="https://www.youtube.com/results" method="GET" target="_blank">
+        <input type="text" name="search_query" placeholder="Digite sua busca...">
+        <input type="submit" value="Buscar">
+    </form>
+
+    <p>Buscar no Bing:</p>
+    <form action="https://www.bing.com/search" method="GET" target="_blank">
+        <input type="text" name="q" placeholder="Digite sua busca...">
+        <input type="submit" value="Buscar">
+    </form>
+
+    <p>Buscar na Wikipedia:</p>
+    <form action="https://pt.wikipedia.org/w/index.php" method="GET" target="_blank">
+        <input type="text" name="search" placeholder="Digite sua busca...">
+        <input type="submit" value="Buscar">
+    </form>
+
+</body>
+
+</html>
