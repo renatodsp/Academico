@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 1.1 - JavaScript</title>
+</head>
+<body>
+    <h1 id="saida"></h1>
+    <p id="p3"></p>
+    <script>
+    alert('Bem-vindo ao JavaScript');
+    document.write('Bem-vindo ao JavaScript<br><br>');
+    document.write('<h3>Questão 2</h3><br>')
+    
+
+    let nome = 'Renato';
+    let idade = 22;
+    let saudavel = true;
+    document.write("<strong>Nome:</strong> " + nome + "<br><strong>Idade: </strong>" + idade + "<br><strong>Saudável? </strong>" + saudavel);
+
+    document.write('<h3>Questão 2</h3><br>')
+    let n1 = 10;
+    let n2 = 20;
+    let soma = (n1+n2);
+    document.write("<br>N1 + N2 = " + soma);
+
+    document.write('<h3>Questão 3</h3><br>')
+    //Concatenação
+    let n3 = "5"
+    document.write("<br>" + n1+n3)
+
+    //Desafio:
+    document.write('<h3>Questão 4</h3><br>')
+    let preco = 5.6789
+    document.write("<br>" + preco.toFixed(2));
+
+    //Questão 5
+    document.getElementById("saida").innerText = "Texto alterado via JavaScript!";
+
+    //Questão 6
+    let p3 = document.getElementById("p3");
+    p3.innerText = "Bem vindo ao JS";
+    p3.style.textAlign = 'center';
+    p3.style.fontStyle = 'italic';
+    p3.style.letterSpacing = '5px';
+
+    //Desafio 2:
+    let dataatual = new Date();
+    let dataformatada = dataatual.toLocaleDateString('pt-BR');
+    document.write("<br>zA data de hoje é: " + dataformatada);
+    </script>
+</body>
+</html>

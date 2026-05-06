@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="meuH1">Introdução ao JavaScript</h1>
+    <p id="p1"></p>
+    <script>
+        document.write('Serafino no meio do mato.');
+        document.write('<br>')
+        let a = 1;
+        document.write(a);
+        document.write('<br>')
+
+        let meuH1 = document.getElementById('meuH1');
+        meuH1.style.color = 'white';
+        meuH1.style.backgroundColor = 'blue';
+        meuH1.innerText = 'Introdução ao JavaScript - 266';
+
+        //Declarar uma variável e atribuir o elemento obtido pelo ID
+        let p1 = document.getElementById('p1');
+        p1.innerText = 'ipsum';
+
+        let n1 = 2;
+        let n2 = 3;
+        p1.innerText = n1+n2;
+
+        let nome = 'João';
+        let sobrenome = 'Silva';
+        document.write(nome + sobrenome );
+        document.write('<br>')
+        document.write(' n1 + n2 = ' + (n1 + n2));
+    
+    </script>
+</body>
+</html>

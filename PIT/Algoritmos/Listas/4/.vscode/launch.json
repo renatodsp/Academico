@@ -1,0 +1,20 @@
+{
+    "configurations": [
+        {
+            "name": "C/C++: clang Compilar e depurar o arquivo ativo",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${fileDirname}/${fileBasenameNoExtension}",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${fileDirname}",
+            "environment": [],
+            "externalConsole": false,
+            "console": "integratedTerminal",
+            "MIMode": "lldb",
+            "targetArchitecture": "x86_64",
+            "preLaunchTask": "C/C++: clang arquivo de build ativo"
+        }
+    ],
+    "version": "2.0.0"
+}

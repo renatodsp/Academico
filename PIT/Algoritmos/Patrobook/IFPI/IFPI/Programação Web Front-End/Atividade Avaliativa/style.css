@@ -1,0 +1,567 @@
+/* ===== variaveis css pra reaproveitar cores e espaçamentos ===== */
+:root {
+    --cor-fundo: #d4d0c8;
+    --cor-fundo-card: #f5f3ef;
+    --cor-header: #1a1a1a;
+    --cor-footer: #1a1a1a;
+    --cor-texto: #333333;
+    --cor-texto-claro: #6b6b6b;
+    --cor-dourado: #c9a84c;
+    --cor-dourado-claro: #e0be5a;
+    --cor-link: #f5f3ef;
+    --cor-borda: #b0a890;
+    --cor-sombra: rgba(0, 0, 0, 0.3);
+    --cor-aside: #1e1e1e;
+    --cor-aside-texto: #cccccc;
+
+    --espacamento-sm: 10px;
+    --espacamento-md: 20px;
+    --espacamento-lg: 30px;
+    --raio-borda: 10px;
+}
+
+/* ===== cores do modo escuro, sobrescreve as variáveis quando ativa ===== */
+.dark-mode {
+    --cor-fundo: #121212;
+    --cor-fundo-card: #1e1e1e;
+    --cor-texto: #e0e0e0;
+    --cor-texto-claro: #999999;
+    --cor-borda: #444444;
+    --cor-sombra: rgba(0, 0, 0, 0.5);
+}
+
+/* ===== reset pra tirar margens e paddings padrão do navegador ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    line-height: 1.5;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    color: var(--cor-link);
+    transition: color 0.2s;
+}
+
+a:hover {
+    color: var(--cor-dourado);
+}
+
+/* ===== header com a imagem de fundo da bandeira do timão ===== */
+header {
+    text-align: center;
+    background-color: var(--cor-header);
+    /* degradê escuro por cima pra dar pra ler o texto */
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.85)), url('img/banner-corinthians.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    color: var(--cor-link);
+    box-shadow: 0 5px 25px var(--cor-sombra);
+    padding-top: 100px;
+    padding-bottom: 0;
+    position: relative;
+    z-index: 100;
+    border-bottom: 3px solid var(--cor-dourado);
+}
+
+header h1 {
+    font-size: 3.5rem;
+    letter-spacing: 0.3rem;
+    color: var(--cor-link);
+    text-shadow: 3px 3px 0 var(--cor-header), -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+header h1 span {
+    color: var(--cor-dourado);
+}
+
+header>p {
+    font-size: 1.1rem;
+    color: #e0e0e0;
+    margin-bottom: 80px;
+    font-style: italic;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: var(--espacamento-lg);
+    padding: 15px;
+    font-size: 1.1rem;
+}
+
+nav a {
+    padding: 5px 10px;
+    transition: color 0.2s, border-bottom 0.2s;
+}
+
+/* deixa o link da página atual com destaque dourado */
+nav a.link-ativo {
+    color: var(--cor-dourado);
+    border-bottom: 2px solid var(--cor-dourado);
+}
+
+/* essa div faz a barra de navegação grudar no topo quando rola a página */
+.nav-wrapper {
+    background-image: linear-gradient(to bottom, #1a1a1a, #111111);
+    box-shadow: 0 5px 15px var(--cor-sombra);
+    position: sticky;
+    top: 0;
+    z-index: 101;
+    margin-top: 30px;
+}
+
+nav a:hover {
+    color: var(--cor-dourado);
+}
+
+/* ===== menu hamburguer, escondido no desktop e aparece no celular ===== */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 22px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.hamburger-linha {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: var(--cor-dourado);
+    border-radius: 2px;
+    transition: transform 0.3s, opacity 0.3s;
+}
+
+.hamburger-ativo .hamburger-linha:nth-child(1) {
+    transform: translateY(9.5px) rotate(45deg);
+}
+
+.hamburger-ativo .hamburger-linha:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger-ativo .hamburger-linha:nth-child(3) {
+    transform: translateY(-9.5px) rotate(-45deg);
+}
+
+/* ===== layout em grid: posts na esquerda e aside na direita ===== */
+.grid-layout {
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    gap: var(--espacamento-md);
+    max-width: 1100px;
+    margin: var(--espacamento-md) auto;
+    padding: 0 var(--espacamento-md);
+}
+
+/* ===== estilo dos posts / cards ===== */
+h2 {
+    border-bottom: 1px dotted var(--cor-borda);
+    border-left: 10px solid var(--cor-dourado);
+    padding-left: var(--espacamento-sm);
+    margin-bottom: var(--espacamento-sm);
+}
+
+/* quando passa o mouse no card ele sobe um pouco, achei legal esse efeito */
+.card {
+    background-color: var(--cor-fundo-card);
+    border: 1px dotted var(--cor-borda);
+    margin-bottom: var(--espacamento-md);
+    padding: var(--espacamento-md);
+    border-radius: var(--raio-borda);
+    box-shadow: 3px 3px 10px 3px var(--cor-sombra);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 5px 5px 20px 5px var(--cor-sombra);
+}
+
+.card * {
+    margin-bottom: var(--espacamento-sm);
+}
+
+.card-imagem {
+    width: 100%;
+    border-radius: var(--raio-borda);
+    margin-bottom: var(--espacamento-sm);
+}
+
+.autor {
+    text-align: right;
+    color: var(--cor-texto-claro);
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+.data-hora {
+    display: block;
+    font-size: 0.8rem;
+}
+
+/* ===== barra lateral (aside) ===== */
+aside {
+    align-self: start;
+}
+
+.aside-secao {
+    background-color: var(--cor-aside);
+    color: var(--cor-aside-texto);
+    padding: var(--espacamento-md);
+    border-radius: var(--raio-borda);
+    margin-bottom: var(--espacamento-md);
+    box-shadow: 3px 3px 10px 3px var(--cor-sombra);
+}
+
+.aside-secao h3 {
+    color: var(--cor-dourado);
+    border-bottom: 2px solid var(--cor-dourado);
+    padding-bottom: 5px;
+    margin-bottom: var(--espacamento-sm);
+}
+
+.aside-links {
+    list-style: none;
+}
+
+.aside-links li {
+    margin-bottom: 8px;
+}
+
+.aside-links a {
+    color: var(--cor-aside-texto);
+    transition: color 0.2s, padding-left 0.3s;
+}
+
+.aside-links a:hover {
+    color: var(--cor-dourado);
+    padding-left: 8px;
+}
+
+.aside-titulos {
+    list-style: none;
+}
+
+.aside-titulos li {
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+}
+
+.aside-titulos strong {
+    color: #e0e0e0;
+}
+
+/* resultados dos jogos com as bolinhas coloridas de V/E/D */
+.resultados {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.resultado-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 5px;
+    border-radius: 5px;
+    transition: background-color 0.2s;
+}
+
+.resultado-item:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.badge {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    font-weight: bold;
+    flex-shrink: 0;
+}
+
+.vitoria {
+    background-color: #1e6b3a;
+    color: #6dffaa;
+}
+
+.empate {
+    background-color: #5a4a00;
+    color: #e0be5a;
+}
+
+.derrota {
+    background-color: #6b1e1e;
+    color: #ff8a8a;
+}
+
+.resultado-item strong {
+    color: #e0e0e0;
+    font-size: 0.85rem;
+    display: block;
+}
+
+.resultado-item p {
+    color: #888888;
+    font-size: 0.75rem;
+    margin: 2px 0 0 0;
+}
+
+/* ===== rodapé ===== */
+footer {
+    background-color: var(--cor-footer);
+    background-image: linear-gradient(to bottom, #1a1a1a, #111111);
+    color: #b0b0b0;
+    margin-top: var(--espacamento-lg);
+    box-shadow: 0 -5px 15px var(--cor-sombra);
+}
+
+.footer-conteudo {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--espacamento-md);
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: var(--espacamento-lg) var(--espacamento-md);
+}
+
+.footer-secao h4 {
+    color: var(--cor-dourado);
+    margin-bottom: var(--espacamento-sm);
+    border-bottom: 1px solid #333333;
+    padding-bottom: 5px;
+}
+
+.footer-secao p {
+    margin-bottom: 5px;
+    font-size: 0.9rem;
+}
+
+.footer-secao a {
+    color: var(--cor-dourado);
+}
+
+.footer-secao a:hover {
+    color: var(--cor-dourado-claro);
+}
+
+.footer-redes {
+    list-style: none;
+}
+
+.footer-redes li {
+    margin-bottom: 8px;
+}
+
+.footer-redes a {
+    color: #b0b0b0;
+    transition: color 0.2s, padding-left 0.3s;
+}
+
+.footer-redes a:hover {
+    color: var(--cor-dourado);
+    padding-left: 5px;
+}
+
+.footer-bottom {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 15px var(--espacamento-md);
+    border-top: 1px solid #333333;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9rem;
+}
+
+.voltar-topo {
+    color: var(--cor-dourado);
+    border: 1px solid var(--cor-dourado);
+    padding: 5px 15px;
+    border-radius: 20px;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.voltar-topo:hover {
+    background-color: var(--cor-dourado);
+    color: #1a1a1a;
+}
+
+/* ===== estilo do dialog (modal nativo do HTML) ===== */
+.dialog-sobre {
+    border: none;
+    border-radius: var(--raio-borda);
+    padding: var(--espacamento-lg);
+    max-width: 500px;
+    background-color: var(--cor-fundo-card);
+    color: var(--cor-texto);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+}
+
+/* o ::backdrop é o fundo escuro que aparece atrás do modal */
+.dialog-sobre::backdrop {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.dialog-sobre h2 {
+    color: var(--cor-dourado);
+    border-left: 5px solid var(--cor-dourado);
+    padding-left: 10px;
+    margin-bottom: var(--espacamento-md);
+}
+
+.dialog-sobre p {
+    margin-bottom: var(--espacamento-sm);
+}
+
+.dialog-sobre ul {
+    margin: var(--espacamento-sm) 0 var(--espacamento-md) var(--espacamento-md);
+}
+
+.dialog-sobre button {
+    background-color: var(--cor-dourado);
+    color: #1a1a1a;
+    border: none;
+    padding: 8px 25px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.2s;
+}
+
+.dialog-sobre button:hover {
+    background-color: var(--cor-dourado-claro);
+}
+
+/* ===== botão do dark mode que fica flutuando no canto inferior direito ===== */
+.dark-mode-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: 2px solid var(--cor-dourado);
+    background-color: var(--cor-fundo-card);
+    font-size: 1.2rem;
+    cursor: pointer;
+    box-shadow: 3px 3px 10px var(--cor-sombra);
+    transition: transform 0.2s;
+    z-index: 999;
+}
+
+.dark-mode-btn:hover {
+    transform: scale(1.1);
+}
+
+/* ===== media queries pra deixar o site responsivo ===== */
+
+/* em telas médias o aside vai pra baixo dos posts */
+@media (max-width: 900px) {
+    .grid-layout {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* no celular muda bastante coisa: menu vira hamburguer, fonte diminui, etc */
+@media (max-width: 700px) {
+    header h1 {
+        font-size: 2rem;
+        letter-spacing: 0.2rem;
+    }
+
+    header>p {
+        font-size: 0.85rem;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    nav {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 250px;
+        height: 100vh;
+        background-color: #1a1a1a;
+        padding-top: 70px;
+        transition: right 0.3s;
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.5);
+        z-index: 99;
+    }
+
+    .nav-aberto {
+        right: 0;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 0;
+        padding: var(--espacamento-sm);
+    }
+
+    nav a {
+        display: block;
+        padding: 12px 15px;
+        border-bottom: none;
+        border-left: 3px solid transparent;
+    }
+
+    nav a.link-ativo,
+    nav a:hover {
+        border-left-color: var(--cor-dourado);
+        border-bottom: none;
+    }
+
+    .grid-layout {
+        padding: 0 var(--espacamento-sm);
+    }
+
+    .footer-conteudo {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+}

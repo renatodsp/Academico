@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Exercícios HTML5 - Formulários</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <h2>1. Formulário de Inscrição e Feedback</h2>
+
+    <form action="http://exemplo.com/inscricao" method="POST">
+
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" required autofocus>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required placeholder="exemplo@email.com">
+
+        <label for="idade">Idade:</label>
+        <input type="number" id="idade" name="idade">
+
+        <label for="senha">Senha para criar conta:</label>
+        <input type="password" id="senha" name="senha" maxlength="12" required>
+
+        <p>Qual o seu nível de satisfação com o nosso serviço?</p>
+        <input type="radio" id="satisfeito" name="satisfacao" value="satisfeito">
+        <label class="inline-label" for="satisfeito">Satisfeito</label>
+
+        <input type="radio" id="neutro" name="satisfacao" value="neutro">
+        <label class="inline-label" for="neutro">Neutro</label>
+
+        <input type="radio" id="insatisfeito" name="satisfacao" value="insatisfeito">
+        <label class="inline-label" for="insatisfeito">Insatisfeito</label>
+
+        <p>Quais newsletters deseja assinar?</p>
+        <input type="checkbox" id="novidades" name="news" value="novidades">
+        <label class="inline-label" for="novidades">Novidades</label>
+
+        <input type="checkbox" id="promocoes" name="news" value="promocoes">
+        <label class="inline-label" for="promocoes">Promoções</label>
+
+        <input type="checkbox" id="artigos" name="news" value="artigos">
+        <label class="inline-label" for="artigos">Artigos Técnicos</label>
+
+        <label for="frequencia">Frequência das newsletters:</label>
+        <select id="frequencia" name="frequencia">
+            <option value="diariamente">Diariamente</option>
+            <option value="semanalmente">Semanalmente</option>
+            <option value="mensalmente">Mensalmente</option>
+        </select>
+
+        <label for="melhoria">Como poderíamos melhorar nossos serviços?</label>
+        <textarea id="melhoria" name="melhoria" rows="4"></textarea>
+
+        <button type="submit">Enviar Respostas</button>
+        <input type="reset" value="Limpar Campos">
+    </form>
+
+    <hr>
+
+    <h2>2. Componentes HTML5</h2>
+
+    <form oninput="resultadoIdade.value = anoAtual.value - anoNasc.value">
+
+        <fieldset>
+            <legend>Informações Pessoais</legend>
+
+            <label for="telefone">Telefone:</label>
+            <input type="tel" id="telefone" name="telefone" pattern="[0-9]{10,11}" placeholder="(XX) XXXXX-XXXX"
+                title="Apenas números">
+
+            <label for="idadeConfirmacao">Confirme sua idade (18 a 100 anos):</label>
+            <input type="number" id="idadeConfirmacao" name="idadeConfirmacao" min="18" max="100">
+
+            <label for="nascimento">Data de Nascimento:</label>
+            <input type="date" id="nascimento" name="nascimento">
+
+            <label for="anoNasc">Ano de Nascimento (para cálculo):</label>
+            <input type="number" id="anoNasc" name="anoNasc" placeholder="Ex: 2000">
+            <input type="hidden" id="anoAtual" value="2026">
+            <p>Idade aproximada calculada: <output name="resultadoIdade" for="anoNasc anoAtual">0</output> anos</p>
+
+        </fieldset>
+
+        <fieldset>
+            <legend>Preferências e Produtos</legend>
+
+            <label for="produto">Pesquisa de Produtos:</label>
+            <input type="text" id="produto" name="produto" list="listaProdutos">
+            <datalist id="listaProdutos">
+                <option value="Notebook">
+                <option value="Smartphone">
+                <option value="Teclado">
+                <option value="Monitor">
+            </datalist>
+
+            <label for="urgencia">Nível de urgência da resposta (1 a 10):</label>
+            <input type="range" id="urgencia" name="urgencia" min="1" max="10">
+
+            <label for="horarioLigacao">Horário preferencial para ligações:</label>
+            <input type="time" id="horarioLigacao" name="horarioLigacao">
+
+            <label for="corTema">Escolha uma cor de tema para o seu perfil:</label>
+            <input type="color" id="corTema" name="corTema" value="#000000">
+        </fieldset>
+
+    </form>
+
+</body>
+
+</html>

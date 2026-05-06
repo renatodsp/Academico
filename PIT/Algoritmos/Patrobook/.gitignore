@@ -1,0 +1,32 @@
+# --- Compiladores C e C++ ---
+*.exe
+*.out
+*.app
+*.o
+*.obj
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+ENV/
+.env
+
+# --- VS Code (Configurações locais que você não precisa no GitHub) ---
+.vscode/bin/
+.vscode/obj/
+# Se quiser manter suas tarefas do VS Code, comente a linha abaixo
+# .vscode/
+
+# --- Web (HTML/CSS/JS) ---
+# Se algum dia usar Node.js:
+node_modules/
+.eslintcache
+
+# --- Arquivos do Sistema e Diversos ---
+Thumbs.db
+desktop.ini
+.DS_Store
+*.log
