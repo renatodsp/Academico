@@ -48,9 +48,9 @@ O sistema é dividido em três módulos para garantir boas práticas de modulari
 
 Marque com `[x]` as etapas concluídas e indique com `▶️` onde o trabalho está pausado atualmente.
 
-- [ ] **Fase 1: Módulo do Usuário**
-  - [ ] Criar estrutura `Usuario` em `usuario.h`.
-  - [ ] Implementar `criar_usuario` e `destruir_usuario` em `usuario.c`.
+- [x] **Fase 1: Módulo do Usuário**
+  - [x] Criar estrutura `Usuario` em `usuario.h`.
+  - [x] Implementar `criar_usuario` e `destruir_usuario` em `usuario.c`.
   - [ ] Implementar `adicionar_ponteiro_amigo` e `remover_ponteiro_amigo` em `usuario.c`.
 - [ ] **Fase 2: Módulo da Rede Social**
   - [ ] Criar estrutura `RedeSocial` em `rede.h`.
